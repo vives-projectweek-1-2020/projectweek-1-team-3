@@ -1,47 +1,47 @@
 # projectweek-1-team-3
 projectweek-1-team-3 created by GitHub Classroom
-Projectweek 2020 
+# H1 Projectweek 2020 
 
-Legende aanmaken (rood en groen aangeven voor wat ze staan regel 5) 
+1.Legende aanmaken (rood en groen aangeven voor wat ze staan regel 5) 
 
-Via google maps kaart werken (via API) 
+2.Via google maps kaart werken (via API) 
 
-Database 
+3.Database 
 
-Winkels/publieke locaties … 
+4.Winkels/publieke locaties … 
 
-Al dan niet open + openingstijden (Open aanduiden door groen of rood) 
+5.Al dan niet open + openingstijden (Open aanduiden door groen of rood) 
 
-Maatregelen die de winkels nemen 
+6.Maatregelen die de winkels nemen 
 
-Wachtrij? Drukste en rustige uren (misschien via API) 
+7.Wachtrij? Drukste en rustige uren (misschien via API) 
 
-Afstand van jou weg (fiets of te voet) 
-
- 
-
-Must Have 
-
-Legenda 
-
-Kaart 
-
-Database 
+8.Afstand van jou weg (fiets of te voet) 
 
  
 
-Should have 
+## H2 Must Have 
 
-Locaties 
+- Legenda 
 
-Openingstijden 
+- Kaart 
+
+- Database 
+
+ 
+
+## H2 Should have 
+
+- Locaties 
+
+- Openingstijden 
 
 Maatregelen 
 
  
 
-Could have 
+## H2 Could have 
 
-Wachtrij 
+- Wachtrij 
 
-Afstand tot gebruiker 
+- Afstand tot gebruiker 
