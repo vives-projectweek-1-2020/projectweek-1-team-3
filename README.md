@@ -18,21 +18,15 @@
 8. Afstand van jou weg (fiets of te voet) 
 
  --> user input: plaats + review + comment maatregelen
+Klaar? Plaats ✔️.
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-<<<<<<< HEAD
-| ❌ | Legenda | ❌ | locaties | ❌ | wachtrij |
-| ❌ | kaart | ❌ | Openingstijden  | ❌ | Afstand tot gebruiker |
-| ❌ | Database | ❌ | Maatregelen | |
-| ❌ |Node.js applicatie | | |
-| ❌ |reviews | | |
-=======
-| - Legenda | - Locaties  | - Wachtrij  |
-| - Kaart  | - Openingstijden| - Afstand tot gebruiker |
-| - Database  | - Maatregelen | - Categoriën |
-| - Node.js applicatie  | | |
->>>>>>> 1f95c7de10b5c83fc0de303d9eeb55f665afc48d
+| ❌ Legenda | ❌ Locaties  | ❌ Wachtrij  |
+| ❌ Kaart  | ❌ Openingstijden| ❌ Afstand tot gebruiker |
+| ❌ Database  | ❌ Maatregelen | ❌ Categoriën |
+| ❌ Node.js applicatie  | | |
+
 
 
 
@@ -42,13 +36,10 @@
 - [Thybris Vandenbroucke](https://github.com/thybris)
 - [Arthur Coupé](https://github.com/tuur2000)
 - [Thomas Luca](https://github.com/ThomasLuca)
-<<<<<<< HEAD
 - [Eric Schuitmaker](https://github.com/ephrs)
 
 ## Mentors
 - [Nico De Witte](https://github.com/BioBoost)
 - [Franky Loret](https://github.com/frankyloret)
 
-=======
-- [Eric Schuitmaker](https://github.com/ephrs)
->>>>>>> 1f95c7de10b5c83fc0de303d9eeb55f665afc48d
+
