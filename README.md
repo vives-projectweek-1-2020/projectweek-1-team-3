@@ -21,10 +21,10 @@
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-| - Legenda | - locaties | - wachtrij |
-| - kaart | - Openingstijden  | - Afstand tot gebruiker |
-| - Database | - Maatregelen | |
-| - Node.js applicatie | | |
+| - Legenda ❌ | - locaties ❌ | - wachtrij ❌ |
+| - kaart ❌ | - Openingstijden ❌ | - Afstand tot gebruiker ❌ |
+| - Database ❌ | - Maatregelen ❌ | |
+| - Node.js applicatie ❌ | | |
 
 
 
