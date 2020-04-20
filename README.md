@@ -21,9 +21,9 @@
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-| - Legenda | - locaties  | - wachtrij  |
-| - kaart  | - Openingstijden| - Afstand tot gebruiker |
-| - Database  | - Maatregelen | |
+| - Legenda | - Locaties  | - Wachtrij  |
+| - Kaart  | - Openingstijden| - Afstand tot gebruiker |
+| - Database  | - Maatregelen | - Categoriën |
 | - Node.js applicatie  | | |
 
 
