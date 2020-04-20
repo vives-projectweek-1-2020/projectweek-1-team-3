@@ -1,5 +1,5 @@
 
-# H1 Projectweek 2020 
+# Projectweek 2020 
 
 1. Legende aanmaken (rood en groen aangeven voor wat ze staan regel 5) 
 
@@ -19,7 +19,7 @@
 
  
 
-## H2 Must Have 
+### Must Have 
 
 - Legenda 
 
@@ -31,7 +31,7 @@
 
  
 
-## H2 Should have 
+### Should have 
 
 - Locaties 
 
@@ -41,8 +41,15 @@
 
  
 
-## H2 Could have 
+### Could have 
 
 - Wachtrij 
 
 - Afstand tot gebruiker 
+
+
+## Members
+- [Thybris Vandenbroucke](https://github.com/thybris)
+- [Arthur Coupé](https://github.com/tuur2000)
+- [Thomas Luca](https://github.com/ThomasLuca)
+- [Eric Schuitmaker](https://github.com/ephrs)
