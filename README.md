@@ -21,10 +21,11 @@
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-| - Legenda | - locaties | - wachtrij |
-| - kaart | - Openingstijden  | - Afstand tot gebruiker |
-| - Database | - Maatregelen | |
-| - Node.js applicatie | | |
+| ❌ | Legenda | ❌ | locaties | ❌ | wachtrij |
+| ❌ | kaart | ❌ | Openingstijden  | ❌ | Afstand tot gebruiker |
+| ❌ | Database | ❌ | Maatregelen | |
+| ❌ |Node.js applicatie | | |
+| ❌ |reviews | | |
 
 
 
@@ -35,3 +36,8 @@
 - [Arthur Coupé](https://github.com/tuur2000)
 - [Thomas Luca](https://github.com/ThomasLuca)
 - [Eric Schuitmaker](https://github.com/ephrs)
+
+## Mentors
+- [Nico De Witte](https://github.com/BioBoost)
+- [Franky Loret](https://github.com/frankyloret)
+
