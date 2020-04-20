@@ -17,14 +17,14 @@
 
 8. Afstand van jou weg (fiets of te voet) 
 
- 
+ --> user input: plaats + review + comment maatregelen
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-| - Legenda "❌" | - locaties "❌" | - wachtrij "❌" |
-| - kaart "❌" | - Openingstijden "❌" | - Afstand tot gebruiker "❌" |
-| - Database "❌" | - Maatregelen "❌" | |
-| - Node.js applicatie "❌" | | |
+| - Legenda | - locaties  | - wachtrij  |
+| - kaart  | - Openingstijden| - Afstand tot gebruiker |
+| - Database  | - Maatregelen | |
+| - Node.js applicatie  | | |
 
 
 
