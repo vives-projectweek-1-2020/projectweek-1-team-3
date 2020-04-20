@@ -7,7 +7,7 @@
 
 3. Database 
 
-4 Winkels/publieke locaties … 
+4. Winkels/publieke locaties … 
 
 5. Al dan niet open + openingstijden (Open aanduiden door groen of rood) 
 
@@ -26,6 +26,8 @@
 - Kaart 
 
 - Database 
+
+- Node.js applicatie
 
  
 
