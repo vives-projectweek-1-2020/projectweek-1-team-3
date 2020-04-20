@@ -19,33 +19,15 @@
 
  
 
-### Must Have 
+| Must Have | Should have | Could have |
+| --- | --- | --- | 
+| - Legenda | - locaties | - wachtrij |
+| - kaart | - Openingstijden  | - Afstand tot gebruiker |
+| - Database | - Maatregelen | |
+| - Node.js applicatie | | |
 
-- Legenda 
 
-- Kaart 
 
-- Database 
-
-- Node.js applicatie
-
- 
-
-### Should have 
-
-- Locaties 
-
-- Openingstijden 
-
-- Maatregelen 
-
- 
-
-### Could have 
-
-- Wachtrij 
-
-- Afstand tot gebruiker 
 
 
 ## Members
