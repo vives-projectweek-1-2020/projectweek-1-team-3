@@ -17,6 +17,12 @@ app.get('/reviews', (req, res) => {
 app.get('/tos', (req, res) => {
   res.sendFile(__dirname + '/pages/tos.html');
 });
+app.get('/css/styles.css', (req, res) => {
+  res.sendFile(__dirname + '/css/styles.css');
+});
+app.get('/map.js', (req, res) => {
+  res.sendFile(__dirname + '/Map/map.js');
+});
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -33,5 +39,5 @@ io.on('connection', (socket) => {
 });
 
 http.listen(8080, () => {
-  console.log('listening on: http://localhost8080');
+  console.log('listening on: http://localhost:8080');
 });
