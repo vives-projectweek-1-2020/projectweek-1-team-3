@@ -5,8 +5,8 @@ var io = require('socket.io')(http);
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
-app.get('/home.js', (req, res) => {
-  res.sendFile(__dirname + '/home.js');
+app.get('/ServerUpdate.js', (req, res) => {
+  res.sendFile(__dirname + '/ServerUpdate.js');
 });
 app.get('/map', (req, res) => {
   res.sendFile(__dirname + '/pages/map.html');
