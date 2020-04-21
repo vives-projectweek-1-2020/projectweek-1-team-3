@@ -1,0 +1,21 @@
+#map {
+    height: 500px;
+    margin: 0;
+    padding: 0;
+  border: 5px dashed #1db9e8;
+  background-color:#FFF !important;
+}
+#legend {
+  border-radius: 15px;
+  background: white;
+  padding: 5px;
+  margin: 10px;
+  transition: all 0.5s ease  0.5s !important;
+}
+#legend:hover {
+  box-shadow: 0 0 112px 10px #1DB9E8;
+} 
+#padding-top-bottom-zero{
+  padding-top: 0;
+  padding-bottom: 0;
+}

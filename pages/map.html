@@ -7,6 +7,8 @@
     <title>SafetyAdvisor-19</title>
     <meta name="description" content="Particula">
     <script src="/map.js"></script>
+    <script src="maplegende.js"></script>
+    <link rel="stylesheet" href="mapstyles.css">
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
@@ -45,13 +47,26 @@
 
 
 
+
+    
+
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-<div class="w3-content">
-<div class="w3-twothird"style=>
+<div class="w3-row-padding w3-padding-64 w3-container"style="width:100%; height:100%">
+<div class="w3-content"style="width:100%; height:100%">
+<div class="w3-twothird"style="width:100%; height:100%">
     <div class="mapstyle" style="height: 100%;overflow: hidden;">
-        <h1>Google map</h1>
-            <div id="googleMap"style="width:100%; height:100%; float: left;" ></div> 
+        <td width="100%" style="padding:10px 50px;background-color:#FFF; font-size:16px;">
+            <h1>Google Map</h1>
+            <div id="googleMap"style="width:100%; height:500px; float: left;" ></div>
+            <div id="map"></div>
+             <div id="legend" > <!--style="display:none"-->
+               <p><u><i>Winkel: </i></u>...</p> 
+               <p><u><i>CoronaMaatregelen: </i></u>Ja/Nee</p>
+               <p><u><i>Openingsuren: </i></u> 9:00-18:00</p>   
+                             
+             </div>
+            </td>
+       
     </div>
 </div>
 </div>
