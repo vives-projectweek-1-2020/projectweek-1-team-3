@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vives-projectweek-1-2020/projectweek-1-team-3#readme",
   "dependencies": {
-    "vue": "^2.6.11"
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   }
 }

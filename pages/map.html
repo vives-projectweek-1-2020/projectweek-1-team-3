@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SafetyAdvisor-19</title>
+    <meta name="description" content="Particula">
+    <script src="/map.js"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC55Q7jdC1Tqjo81u2xy9C7GF2Mylx1FfM&callback=initMap"
+        type="text/javascript"></script>
     <meta name="author" content="Project week 1 team 3">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
@@ -12,6 +22,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   
 </head>
 <style>
@@ -19,14 +30,16 @@
     .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 </style>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js"></script>
+
     <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-indigo w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-lime" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="../index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
-      <a href="reviews.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Reviews</a>
-      <a href="" class="w3-bar-item w3-button w3-padding-large w3-white">Map</a>
-      <a href="tos.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">TOS</a>
+      <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+      <a href="/reviews" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Reviews</a>
+      <a href="/map" class="w3-bar-item w3-button w3-padding-large w3-white">Map</a>
+      <a href="/tos" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">TOS</a>
     </div>
 </div>
 
@@ -35,13 +48,11 @@
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
 <div class="w3-content">
-<div class="w3-twothird">
-  <h1>Lorem Ipsum</h1>
-  <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-  <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div class="w3-twothird"style=>
+    <div class="mapstyle" style="height: 100%;overflow: hidden;">
+        <h1>Google map</h1>
+            <div id="googleMap"style="width:100%; height:100%; float: left;" ></div> 
+    </div>
 </div>
 </div>
 </div>
