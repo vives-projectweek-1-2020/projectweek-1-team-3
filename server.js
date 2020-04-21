@@ -23,6 +23,9 @@ app.get('/css/styles.css', (req, res) => {
 app.get('/map.js', (req, res) => {
   res.sendFile(__dirname + '/Map/map.js');
 });
+app.get('/userReview', (req, res) => {
+  res.sendFile(__dirname + '/pages/userReview.html');
+});
 
 io.on('connection', (socket) => {
   console.log('a user connected');
