@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   
 </head>
 <style>
@@ -37,18 +39,18 @@
 <div class="w3-content">
 <div class="w3-twothird">
   <h1>Write a review</h1>
-  <div class="w3-padding-32">
+  <div>
     <form> <!--TODO: Specify where data needs to go-->
-        <label for="userName" class="w3-text-black">Username:</label>
+        <label for="userName" class="w3-padding-32">Username:</label>
         <input type="text" id="userName"><br>
-        <label for="review" class="w3-text-black">Rating: </label>
+        <!-- Star rating found on https://github.com/GeekLaunch/star-rating-->
+        <label for="rating" class="w3-padding-32">Rating: </label>
+        <x-star-rating value="3" number="5"></x-star-rating><br>
+        <script src="userData.js"></script>
+        <label for="review">Review:</label><br>
+        <textarea name="review" cols="40" rows="5"></textarea>
     </form>
   </div>
-  <!-- <h5 class="w3-padding-32">Write a review</h5> -->
-
-  <!-- <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.</p> -->
 </div>
 </div>
 </div>
