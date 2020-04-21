@@ -8,6 +8,9 @@ app.get('/', (req, res) => {
 app.get('/ServerUpdate.js', (req, res) => {
   res.sendFile(__dirname + '/ServerUpdate.js');
 });
+app.get('/userData.js', (req, res) => {
+  res.sendFile(__dirname + '/pages/userData.js');
+});
 app.get('/map', (req, res) => {
   res.sendFile(__dirname + '/pages/map.html');
 });
