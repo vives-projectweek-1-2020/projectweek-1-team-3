@@ -8,6 +8,15 @@ app.get('/', (req, res) => {
 app.get('/home.js', (req, res) => {
   res.sendFile(__dirname + '/home.js');
 });
+app.get('/map', (req, res) => {
+  res.sendFile(__dirname + '/pages/map.html');
+});
+app.get('/reviews', (req, res) => {
+  res.sendFile(__dirname + '/pages/reviews.html');
+});
+app.get('/tos', (req, res) => {
+  res.sendFile(__dirname + '/pages/tos.html');
+});
 
 io.on('connection', (socket) => {
   console.log('a user connected');
