@@ -62,35 +62,3 @@ function setData(){
     rigthDataDiv.innerHTML += "fake data "
     getData()
 }
-/* var legend = document.getElementById('legend');
-for (var style in styles) {
-  var name = style.name;
-  var icon = style.icon;
-  var div = document.createElement('div');
-  div.innerHTML = '<img src="' + icon + '"> ' + name;
-  legend.appendChild(div);
-} */
-
-var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: new google.maps.LatLng(-33.91722, 151.23064),
-          mapTypeId: 'roadmap'
-        });
-
-        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-        var icons = {
-          parking: {
-            name: 'Parking',
-            icon: iconBase + 'parking_lot_maps.png'
-          },
-          library: {
-            name: 'Library',
-            icon: iconBase + 'library_maps.png'
-          },
-          info: {
-            name: 'Info',
-            icon: iconBase + 'info-i_maps.png'
-          }
-        };
