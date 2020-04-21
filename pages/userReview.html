@@ -43,12 +43,14 @@
     <form> <!--TODO: Specify where data needs to go-->
         <label for="userName" class="w3-padding-32">Username:</label>
         <input type="text" id="userName"><br>
+        <label for="shopName" class="w3-padding-32" style="margin-top: 40px;">Shop:</label>
+        <input type="text" id="shopName" style="margin-top: 40px;"><br>
         <!-- Star rating found on https://github.com/GeekLaunch/star-rating-->
         <label for="rating" class="w3-padding-32">Rating: </label>
-        <x-star-rating value="3" number="5"></x-star-rating><br>
+        <x-star-rating value="3" number="5"></x-star-rating><br><br>
         <script src="userData.js"></script>
-        <label for="review">Review:</label><br>
-        <textarea name="review" cols="40" rows="5"></textarea>
+        <label for="review" style="margin-top: 30px;">Review:</label><br>
+        <textarea name="review" cols="40" rows="5" style="margin-top: 10px;"></textarea>
     </form>
   </div>
 </div>
