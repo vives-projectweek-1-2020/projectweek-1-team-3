@@ -40,7 +40,7 @@
 <div class=".w3-col.s1{width:80%}">
   <h1>Write a review</h1>
   <div>
-    <form> <!--TODO: Specify where data needs to go-->
+    <form method="POST" action="/userReview"> <!--TODO: Specify where data needs to go-->
         <div class="form-group">
           <label for="userName" class="w3-padding-32">Username:</label><br>
           <input type="text" id="userName" style="margin-top: 10px; margin-bottom: 30px"><br>
@@ -56,23 +56,23 @@
         <div class="form-group">
           <!-- Star rating found on https://github.com/GeekLaunch/star-rating-->
           <label for="rating" class="w3-padding-32">Rating:</input><br>
-          <x-star-rating value="3" number="5"></x-star-rating><br><br>
-          <script src="userData.js"></script>
+          <x-star-rating value="3" number="5" id="ster"></x-star-rating><br><br>
         </div>
         <div class="form-group">
           <label for="review" style="margin-top: 30px;">Review:</label><br>
-          <textarea name="review" cols="40" rows="5" style="margin-top: 10px;"></textarea>
+          <textarea name="review" id="review" cols="40" rows="5" style="margin-top: 10px;"></textarea>
         </div>
-        <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top"!  type=button onClick="" value='Submit review'>
-    </form>
+        <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top"!  type=button id="submit" value='Submit review'>
+      </form>
+    </div>
   </div>
-</div>
 </div>
 </div>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-<p>Please review our <a href="/tos">Terms Of Use</a> before writing a review.</p>
+  <p>Please review our <a href="/tos">Terms Of Use</a> before writing a review.</p>
 </footer>
 </body>
 </html>
+<script src="userData.js"></script>
