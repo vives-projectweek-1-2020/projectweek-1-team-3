@@ -30,15 +30,12 @@ Klaar? Plaats ✔️.
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-| ❌ Legenda | ❌ Locaties  | ❌ Wachtrij  |
-| ❌ Kaart  | ❌ Openingstijden| ❌ Afstand tot gebruiker |
+| ✔️ Legenda | ✔️ Locaties  | ❌ Wachtrij  |
+| ✔️ Kaart  | ❌ Openingstijden| ❌ Afstand tot gebruiker |
 | ✔️ Database  | ❌ Maatregelen | ❌ Categoriën |
-| ❌ Node.js applicatie  | | |
+| ✔️ Node.js applicatie  | | |
 
-
-
-
-
+review werkende (includes maatregelen en wachtrij) ❌
 
 ## Members
 - [Thybris Vandenbroucke](https://github.com/thybris)

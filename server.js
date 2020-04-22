@@ -11,6 +11,14 @@ app.get('/ServerUpdate.js', (req, res) => {
 app.get('/userData.js', (req, res) => {
   res.sendFile(__dirname + '/pages/userData.js');
 });
+app.get('/red-dot.png', (req, res) => {
+  res.sendFile(__dirname + '/pages/red-dot.png');
+});
+app.get('/green-dot.png', (req, res) => {
+  res.sendFile(__dirname + '/pages/green-dot.png');
+});
+
+
 app.get('/map', (req, res) => {
   res.sendFile(__dirname + '/pages/map.html');
 });
@@ -28,6 +36,12 @@ app.get('/map.js', (req, res) => {
 });
 app.get('/userReview', (req, res) => {
   res.sendFile(__dirname + '/pages/userReview.html');
+});
+app.get('/about', (req, res) => {
+  res.sendFile(__dirname + '/pages/about.html');
+});
+app.get('/vivesLogo', (req, res) => {
+  res.sendFile(__dirname + '/images/vivesLogo.png');
 });
 
 io.on('connection', (socket) => {
