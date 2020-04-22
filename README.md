@@ -32,7 +32,7 @@ Klaar? Plaats ✔️.
 | --- | --- | --- | 
 | ❌ Legenda | ❌ Locaties  | ❌ Wachtrij  |
 | ❌ Kaart  | ❌ Openingstijden| ❌ Afstand tot gebruiker |
-| ❌ Database  | ❌ Maatregelen | ❌ Categoriën |
+| ✔️ Database  | ❌ Maatregelen | ❌ Categoriën |
 | ❌ Node.js applicatie  | | |
 
 
