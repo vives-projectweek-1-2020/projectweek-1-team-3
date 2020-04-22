@@ -1,4 +1,5 @@
 function initMap() {
+  
 
   console.log("initmap")
   var bp = { lat: 51.30, lng: 3.14 };
@@ -19,30 +20,45 @@ function initMap() {
   var clusterMarker = [];
 
   // for (i = 0; i < value.length; i++) {
-  locations.push(["Name1", 53, 6])
-  locations.push(["Name1", 53, 6])
-  locations.push(["Name1", 54, 6])
-  locations.push(["Name1", 54, 7])
+    locations.push(["Brugge",  51.209348, 3.2246995])
+    locations.push(["Gent", 51.0543422, 3.7174243])
+  locations.push(["Name1",  0, 3.2246995])
+  locations.push(["Name1", 0, 3.7174243])
   locations.push(["Name1", 53, 6])
   // }
   for (var i = 0; i < locations.length; i++) {
     var item = locations[i];
-    // var image = {
-    //     url: '/img/Gray.png',
-    //     scaledSize: new google.maps.Size(20, 20),
-    //     optimized: false,
-    //     zIndex: 100
-    // }
+    var image = {
+         url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png ',
+         scaledSize: new google.maps.Size(20, 20),
+         optimized: false,
+         zIndex: 100
+     }
+
+    
 
     var marker = new google.maps.Marker({
       position: { lat: item[1], lng: item[2] },
       title: String(item[0]),
       // map: map,
     });
+
+   
+
     oms.addListener('click', function (marker) {
-      iw.setContent('TESTTESTTESTTEST');
+      iw.setContent("Naamwinkel");
       iw.open(map, marker);
+      
+      document.getElementById("winkel").innerHTML=" aflezen uit mysql";
+      document.getElementById("maatregelen").innerHTML="Ja";
+      document.getElementById("openingsuren").innerHTML="20-21";
+      
+      document.getElementById("legend").style.display = "block";
+      
+      setTimeout(function(){document.getElementById("legend").style.display = "none";},5000);
+      
     });
+
     oms.addMarker(marker);
     clusterMarker.push(marker);
   }
@@ -51,36 +67,33 @@ function initMap() {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',//standard cluster markers
   });
 }
-/* var legend = document.getElementById('legend');
-for (var style in styles) {
-  var name = style.name;
-  var icon = style.icon;
-  var div = document.createElement('div');
-  div.innerHTML = '<img src="' + icon + '"> ' + name;
-  legend.appendChild(div);
-} */
+/*
+let map;
+// global array to store the marker object 
+let markersArray = [];
 
-// var map;
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 16,
-//     center: new google.maps.LatLng(-33.91722, 151.23064),
-//     mapTypeId: 'roadmap'
-//   });
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat:51.30, lng: 3.14},
+    zoom: 8
+  });
+  addMarker({lat: 51.209348, lng:  3.2246995}, "yellow");
+  addMarker({lat: -34.397, lng: 150.644}, "green");
+  addMarker({lat: -34.597, lng: 150.844}, "blue");
+}
 
-//   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-//   var icons = {
-//     parking: {
-//       name: 'Parking',
-//       icon: iconBase + 'parking_lot_maps.png'
-//     },
-//     library: {
-//       name: 'Library',
-//       icon: iconBase + 'library_maps.png'
-//     },
-//     info: {
-//       name: 'Info',
-//       icon: iconBase + 'info-i_maps.png'
-//     }
-//   };
-// }
+function addMarker(latLng, color) {
+  let url = "http://maps.google.com/mapfiles/ms/icons/";
+  url += color + "-dot.png";
+
+  let marker = new google.maps.Marker({
+    map: map,
+    position: latLng,
+    icon: {
+      url: url
+    }
+  });
+
+  //store the marker object drawn in global array
+  markersArray.push(marker);
+}*/
