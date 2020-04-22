@@ -32,6 +32,9 @@ app.get('/userReview', (req, res) => {
 app.get('/about', (req, res) => {
   res.sendFile(__dirname + '/pages/about.html');
 });
+app.get('/vivesLogo', (req, res) => {
+  res.sendFile(__dirname + '/images/vivesLogo.png');
+});
 
 io.on('connection', (socket) => {
   console.log('a user connected');
