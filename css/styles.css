@@ -23,6 +23,7 @@ x-star-rating > .star.full::after {
 }
 textarea{
     height: 200px;
+<<<<<<< HEAD
     width: 900px;
 }
 
@@ -66,3 +67,15 @@ textarea{
   }
 
   
+=======
+    width: 90%;
+}
+
+.form-group input{
+    height: 30px;
+}
+
+form input{
+    width: 90%;
+}
+>>>>>>> c915579a07d9e290d47113d36a445826ec8fdbed
