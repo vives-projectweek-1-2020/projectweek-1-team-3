@@ -17,5 +17,13 @@ x-star-rating > .star.full::after {
 
 textarea{
     height: 200px;
-    width: 900px;
+    width: 90%;
+}
+
+.form-group input{
+    height: 30px;
+}
+
+form input{
+    width: 90%;
 }
