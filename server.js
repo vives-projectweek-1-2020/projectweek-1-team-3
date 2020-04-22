@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-
+var db = require("./Database.js")
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
@@ -36,6 +36,7 @@ io.on('connection', (socket) => {
   socket.on('doc ready', (msg) => {
     console.log('doc ready from client: ' + msg);
     socket.emit("hallo van server", "hallo van server")
+    db.asyncFunction();
   });
   
   socket.on('disconnect', () => {
