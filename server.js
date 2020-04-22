@@ -32,17 +32,24 @@ app.get('/userReview', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
-  
-  socket.on('doc ready', (msg) => {
-    console.log('doc ready from client: ' + msg);
-    socket.emit("hallo van server", "hallo van server")
-    db.asyncFunction();
+
+  socket.on('RequestAllLocaions', () => {
+    new Promise((resolve, reject) => {
+      stateQ = db.getAllLocations();
+      resolve(stateQ)
+    }).then(function (value) {
+      console.log(value)
+      socket.emit("SendAllLocations", value);
+    }).catch(function (err) {
+      socket.emit("Error", err);
+      console.log(err);
+    })
   });
-  
+
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
-  
+
 });
 
 http.listen(8080, () => {
