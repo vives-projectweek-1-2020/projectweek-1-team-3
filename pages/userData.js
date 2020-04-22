@@ -77,9 +77,37 @@ let rating = document.getElementById("ster");
 
 submit_button.addEventListener('click', function displayData(){
 
-    console.log(username.value);
-    console.log(shopname.value);
-    console.log(city.value);
-    console.log(ster.value);
-    console.log(review.value);
+    if(dataValidator() == true){
+        console.log(username.value);
+        console.log(shopname.value);
+        console.log(city.value);
+        console.log(rating.value);
+        console.log(review.value);
+    }
 })
+
+function dataValidator(){
+    var isvalidData = true;
+    if(!(username.value.length >= 2 && username.value.length <= 20)){
+        IsvalidData = false;
+        alert("length of username must be within 2-20 characters");
+    }
+    if(!(shopname.value.length > 2 && shopname.value.length <= 30)){
+        IsvalidData = false;
+        alert("length of shopname must be within 2-30 characters");
+    }
+    if(!(city.value.length > 2 && city.value.length <= 30)){
+        IsvalidData = false;
+        alert("length of village name must be within 2-30 characters");
+    }
+    if(!(rating.value >= 0 && rating.value <= 5)){
+        IsvalidData = false;
+        alert("Rating must be between 0 and 5")
+    }
+    if(!(review.value.length > 4 && review.value.length <= 1999)){
+        IsvalidData = false;
+        alert("Length of review must be within 5-2000 characters");
+    }
+    return isvalidData;
+}
+
