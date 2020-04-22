@@ -1,4 +1,15 @@
 function initMap() {
+
+   
+    
+      let marker = new google.maps.Marker({
+        map: map,
+        position: { lat: 51.30, lng: 3.14 },
+        icon: {
+          url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"  //kleur marker
+        }
+      });
+    }
     
     console.log("initmap")
     var bp = { lat: 51.30, lng: 3.14 };
@@ -40,7 +51,7 @@ function initMap() {
             // map: map,
         });
         oms.addListener('click', function (marker) {
-            iw.setContent('TESTTESTTESTTEST');
+            iw.setContent("<p><u><i>Winkel: </i></u>...</p><p><u><i>CoronaMaatregelen: </i></u>Ja/Nee</p><p><u><i>Openingsuren: </i></u> 9:00-18:00</p>");
                 iw.open(map, marker);
         });
         oms.addMarker(marker);
@@ -50,7 +61,7 @@ function initMap() {
         maxZoom: 11,
         imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',//standard cluster markers
     });
-}
+
 function getData(){
     setTimeout(() => {
         setData()
@@ -62,3 +73,4 @@ function setData(){
     rigthDataDiv.innerHTML += "fake data "
     getData()
 }
+

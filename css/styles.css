@@ -14,8 +14,55 @@ x-star-rating > .star.full::after {
     content: '\f2fc';
     color: #fd0;
 }
-
+#googlemap{
+    grid-column: 1;
+    grid-row: 1;
+}
+#grid{
+    display: grid;
+}
 textarea{
     height: 200px;
     width: 900px;
 }
+
+#legend{
+    position: absolute;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 15px;
+    background: white;
+    padding: 5px;
+    margin: 10px;
+    transition: all 0.5s ease  0.5s !important;
+    display: left;
+}
+#legend:hover {
+  box-shadow: 0 0 112px 10px #1DB9E8;
+} 
+#padding-top-bottom-zero{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mapstyle{
+    position: relative;
+    font-family: Arial;
+}
+.text-block {
+    display: grid;
+    position: absolute;
+    -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+     background-color: #f0f7fb;
+     background-position: 9px 0px;
+     background-repeat: no-repeat;
+     border: solid 1px #3498db;
+     border-radius: 6px;
+     line-height: 16px;
+     overflow: hidden;
+     padding: 10px 40px;
+     margin-top: 36%;
+  }
+
+  
