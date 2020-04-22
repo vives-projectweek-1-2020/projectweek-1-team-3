@@ -83,6 +83,7 @@ submit_button.addEventListener('click', function displayData(){
         console.log(city.value);
         console.log(rating.value);
         console.log(review.value);
+        alert("Your review has been submitted.");
     }
 })
 
