@@ -1,18 +1,18 @@
 class userData extends HTMLElement {
-    get value () {
+    get value() {
         return this.getAttribute('value') || 0;
     }
 
-    set value (val) {
+    set value(val) {
         this.setAttribute('value', val);
         this.highlight(this.value - 1);
     }
 
-    get number () {
+    get number() {
         return this.getAttribute('number') || 5;
     }
 
-    set number (val) {
+    set number(val) {
         this.setAttribute('number', val);
 
         this.stars = [];
@@ -31,13 +31,13 @@ class userData extends HTMLElement {
         this.value = this.value;
     }
 
-    highlight (index) {
+    highlight(index) {
         this.stars.forEach((star, i) => {
             star.classList.toggle('full', i <= index);
         });
     }
 
-    constructor () {
+    constructor() {
         super();
 
         this.number = this.number;
@@ -75,9 +75,9 @@ let review = document.getElementById("review");
 let rating = document.getElementById("ster");
 
 
-submit_button.addEventListener('click', function displayData(){
+submit_button.addEventListener('click', function displayData() {
 
-    if(dataValidator() == true){
+    if (dataValidator() == true) {
         console.log(username.value);
         console.log(shopname.value);
         console.log(city.value);
@@ -87,25 +87,25 @@ submit_button.addEventListener('click', function displayData(){
     }
 })
 
-function dataValidator(){
+function dataValidator() {
     var isvalidData = true;
-    if(!(username.value.length >= 2 && username.value.length <= 20)){
+    if (!(username.value.length >= 2 && username.value.length <= 20)) {
         IsvalidData = false;
         alert("length of username must be within 2-20 characters");
     }
-    if(!(shopname.value.length > 2 && shopname.value.length <= 30)){
+    if (!(shopname.value.length > 2 && shopname.value.length <= 30)) {
         IsvalidData = false;
         alert("length of shopname must be within 2-30 characters");
     }
-    if(!(city.value.length > 2 && city.value.length <= 30)){
+    if (!(city.value.length > 2 && city.value.length <= 30)) {
         IsvalidData = false;
         alert("length of village name must be within 2-30 characters");
     }
-    if(!(rating.value >= 0 && rating.value <= 5)){
+    if (!(rating.value >= 0 && rating.value <= 5)) {
         IsvalidData = false;
         alert("Rating must be between 0 and 5")
     }
-    if(!(review.value.length > 4 && review.value.length <= 1999)){
+    if (!(review.value.length > 4 && review.value.length <= 1999)) {
         IsvalidData = false;
         alert("Length of review must be within 5-2000 characters");
     }

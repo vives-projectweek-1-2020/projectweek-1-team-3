@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SafetyAdvisor |submit</title>
-    <meta name="author" content="Project week 1 team 3">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
-    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SafetyAdvisor |submit</title>
+  <meta name="author" content="Project week 1 team 3">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+  <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
 </head>
 <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lato", sans-serif
+  }
+
+  .w3-bar,
+  h1,
+  button {
+    font-family: "Montserrat", sans-serif
+  }
 </style>
+
 <body>
-    <!-- Navbar -->
-<div class="w3-top">
+  <!-- Navbar -->
+  <div class="w3-top">
     <div class="w3-bar w3-indigo w3-card w3-left-align w3-large">
       <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
       <a href="/reviews" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Reviews</a>
@@ -30,49 +45,52 @@
       <a href="/tos" class="w3-bar-item w3-button w3-padding-large w3-hover-white">TOS</a>
       <a href="/about" class="w3-bar-item w3-button w3-padding-large w3-hover-white">About Us</a>
     </div>
-</div>
+  </div>
 
 
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-<div class="w3-content">
-<div class=".w3-col.s1{width:80%}">
-  <h1>Write a review</h1>
-  <div>
-    <form method="POST" action="/userReview"> <!--TODO: Specify where data needs to go-->
-        <div class="form-group">
-          <label for="userName" class="w3-padding-32">Username:</label><br>
-          <input type="text" id="userName" style="margin-top: 10px; margin-bottom: 30px"><br>
+  <!-- First Grid -->
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class=".w3-col.s1{width:80%}">
+        <h1>Write a review</h1>
+        <div>
+          <form method="POST" action="/userReview">
+            <!--TODO: Specify where data needs to go-->
+            <div class="form-group">
+              <label for="userName" class="w3-padding-32">Username:</label><br>
+              <input type="text" id="userName" style="margin-top: 10px; margin-bottom: 30px"><br>
+            </div>
+            <div class="form-group">
+              <label for="shopName" class="w3-padding-32" style="margin-top: 40px;">Shop:</label><br>
+              <input type="text" id="shopName" style="margin-top: 10px; margin-bottom: 30px"><br>
+            </div>
+            <div class="form-group">
+              <label for="location" class="w3-padding-32" style="margin-top: 40px;">City/Village:</label><br>
+              <input type="text" id="location" style="margin-top: 10px; margin-bottom: 30px"><br>
+            </div>
+            <div class="form-group">
+              <!-- Star rating found on https://github.com/GeekLaunch/star-rating-->
+              <label for="rating" class="w3-padding-32">Rating:</input><br>
+                <x-star-rating value="3" number="5" id="ster"></x-star-rating><br><br>
+            </div>
+            <div class="form-group">
+              <label for="review" style="margin-top: 30px;">Review:</label><br>
+              <textarea name="review" id="review" cols="40" rows="5" style="margin-top: 10px;"></textarea>
+            </div>
+            <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type=button id="submit"
+              value='Submit review'>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="shopName" class="w3-padding-32" style="margin-top: 40px;">Shop:</label><br>
-          <input type="text" id="shopName" style="margin-top: 10px; margin-bottom: 30px"><br>
-        </div>
-        <div class="form-group">
-          <label for="location" class="w3-padding-32" style="margin-top: 40px;">City/Village:</label><br>
-          <input type="text" id="location" style="margin-top: 10px; margin-bottom: 30px"><br>
-        </div>
-        <div class="form-group">
-          <!-- Star rating found on https://github.com/GeekLaunch/star-rating-->
-          <label for="rating" class="w3-padding-32">Rating:</input><br>
-          <x-star-rating value="3" number="5" id="ster"></x-star-rating><br><br>
-        </div>
-        <div class="form-group">
-          <label for="review" style="margin-top: 30px;">Review:</label><br>
-          <textarea name="review" id="review" cols="40" rows="5" style="margin-top: 10px;"></textarea>
-        </div>
-        <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type=button id="submit" value='Submit review'>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">
-  <p>Please review our <a href="/tos">Terms Of Use</a> before writing a review.</p>
-</footer>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <p>Please review our <a href="/tos">Terms Of Use</a> before writing a review.</p>
+  </footer>
 </body>
+
 </html>
 <script src="userData.js"></script>
