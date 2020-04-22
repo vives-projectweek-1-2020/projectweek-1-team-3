@@ -66,3 +66,20 @@ class userData extends HTMLElement {
 }
 
 customElements.define('x-star-rating', userData);
+
+let submit_button = document.getElementById("submit");
+let username = document.getElementById("userName");
+let shopname = document.getElementById("shopName");
+let city = document.getElementById("location");
+let review = document.getElementById("review");
+let rating = document.getElementById("ster");
+
+
+submit_button.addEventListener('click', function displayData(){
+
+    console.log(username.value);
+    console.log(shopname.value);
+    console.log(city.value);
+    console.log(ster.value);
+    console.log(review.value);
+})
