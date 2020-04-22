@@ -1,5 +1,13 @@
 
-# Projectweek 2020 
+# SAFETY-ADVISOR-19 
+## Project
+
+This project contains the code for a website called safety-advisors-19. This website is meant to be a platform where users can review shops/businesses based on the action they take to prevent the the COVID-19 virus from spreading. Based on those reviews, shop owners can decide to implement more/stricter measures if needed. 
+
+Help protecting your community by leaving a review.
+Stay safe!
+
+## Tasks
 
 1. Legende aanmaken (rood en groen aangeven voor wat ze staan regel 5) 
 
@@ -24,7 +32,7 @@ Klaar? Plaats ✔️.
 | --- | --- | --- | 
 | ❌ Legenda | ❌ Locaties  | ❌ Wachtrij  |
 | ❌ Kaart  | ❌ Openingstijden| ❌ Afstand tot gebruiker |
-| ❌ Database  | ❌ Maatregelen | ❌ Categoriën |
+| ✔️ Database  | ❌ Maatregelen | ❌ Categoriën |
 | ❌ Node.js applicatie  | | |
 
 
