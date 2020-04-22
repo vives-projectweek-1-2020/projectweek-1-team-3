@@ -1,3 +1,4 @@
+
 var socket = io();
 function RequestAllLocaions(){
     socket.emit("RequestAllLocaions");

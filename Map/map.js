@@ -1,6 +1,5 @@
 function initMap() {
   
-
   console.log("initmap")
   var bp = { lat: 51.30, lng: 3.14 };
   var map = new google.maps.Map(document.getElementById('googleMap'), {
@@ -35,7 +34,7 @@ function initMap() {
     if (rating > 2,5) {
       var image = {  
         url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png ',
-        scaledSize: new google.maps.Size(20, 20),
+        scaledSize: new google.maps.Size(30, 30),
         optimized: false,
         zIndex: 100
       } 
@@ -44,7 +43,7 @@ function initMap() {
     {
       var image = {
         url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png ',
-        scaledSize: new google.maps.Size(20, 20),
+        scaledSize: new google.maps.Size(30, 30),
         optimized: false,
         zIndex: 100
     }
@@ -71,7 +70,7 @@ function initMap() {
       
       document.getElementById("winkel").innerHTML=" aflezen uit mysql";  //mysql importeren hier
       document.getElementById("maatregelen").innerHTML="Ja";
-      document.getElementById("openingsuren").innerHTML="0/5";
+      document.getElementById("score").innerHTML="0/5";
       
       document.getElementById("legend").style.display = "block";
       
