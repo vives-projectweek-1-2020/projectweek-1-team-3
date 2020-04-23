@@ -1,7 +1,11 @@
+require('dotenv').config()
+
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var db = require("./Database.js")
+const request = require('request')
+
 var bodyParser = require('body-parser')
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
@@ -53,10 +57,30 @@ app.get('/vivesLogo', (req, res) => {
 
 
 app.post('/Submit_Review', (req, res) => {
-  //console.log(req.body)
-  db.insertReview(req.body)
-  res.send("Review submitted")
-  res.end()
+  // console.log(req.body)
+
+  request('https://maps.googleapis.com/maps/api/place/textsearch/json?key=AIzaSyBapC08lQSjzK3EjliUyI89EB7j6a7YRZE&input=' + req.body.location, (error, response, data) => {
+
+    if (error) return res.json({error: 'er is een error'})
+
+    data = JSON.parse(data)
+
+
+    const lat = data.results[0].geometry.location.lat
+    const long = data.results[0].geometry.location.lng
+    const location = data.results[0].formatted_address
+
+    const review = {
+      ...req.body,
+      location,
+      long,
+      lat
+    }
+
+    db.insertReview(review)
+
+    return res.send("Review submitted")
+  })
 })
 
 io.on('connection', (socket) => {

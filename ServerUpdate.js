@@ -41,22 +41,15 @@ function initMap() {
         });
 
 
-        //new
-         // Create the search box and link it to the UI element.
-         var input = document.getElementById('pac-input');
-         var searchBox = new google.maps.places.SearchBox(input);
-         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
- 
-         // Bias the SearchBox results towards current map's viewport.
-         map.addListener('bounds_changed', function() {
-           searchBox.setBounds(map.getBounds());
-         });
+        // Create the search box and link it to the UI element.
+ var input = document.getElementById('pac-input');
+ var searchBox = new google.maps.places.SearchBox(input);
+ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-         
-
-
-
-
+ // Bias the SearchBox results towards current map's viewport.
+ map.addListener('bounds_changed', function() {
+   searchBox.setBounds(map.getBounds());
+ });
 
         var iw = new google.maps.InfoWindow();
         var oms = new OverlappingMarkerSpiderfier(map, {
@@ -69,9 +62,7 @@ function initMap() {
         
 
         for (i = 0; i < value.length; i++) {
-            //locations.push(["Brugge", 51.209348, 3.2246995])  //mysql coordinaten hier ingeven
-            //locations.push(["Gent", 51.0543422, 3.7174243])
-            locations.push([value[i].locatie, value[i].longitude, value[i].latitude, value[i].rating])
+            locations.push([value[i].locatie, value[i].latitude, value[i].longitude, value[i].rating, value[i].shop])
         }
 
 
@@ -103,16 +94,18 @@ function initMap() {
                 title: String(item[0]),
                 icon: image,
                 rating: item[3],
+                shop: item[4],
                 // map: map,
             });
 
 
 
             oms.addListener('click', function (marker) {
-                iw.setContent("Naamwinkel"); //uitmysql halen colom winkel
+                iw.setContent(marker.shop); //uitmysql halen colom winkel
                 iw.open(map, marker);
 
-                document.getElementById("winkel").innerHTML = marker.title;  //mysql importeren hier
+                document.getElementById("winkel").innerHTML = marker.shop;  
+                document.getElementById("adress").innerHTML = marker.title;
                 document.getElementById("maatregelen").innerHTML = "Ja";
                 document.getElementById("score").innerHTML = marker.rating + "/5";
 
@@ -135,6 +128,8 @@ function initMap() {
     })
 
 }
+
+
 function RequestReviews() {
     console.log("fgdfns")
     socket.emit("RequestAllReviews")
@@ -153,13 +148,14 @@ function PrintReviews(data) {
         var head = document.createElement("div");
         head.className = "head"
         head.setAttribute("style", "display: flex; background-color: lightgrey;")
-        
+
         var identifacation = document.createElement("h5")
         identifacation.className = "identification"
         identifacation.innerHTML = data[i].shop + "  " + data[i].locatie;
         identifacation.style.paddingLeft = "2px"
         identifacation.style.width = "100%"
-        
+
+
         var rating = document.createElement("h5")
         rating.innerHTML = data[i].rating + "&#10025"
         rating.className = "rating"
@@ -205,16 +201,4 @@ function PrintReviews(data) {
         document.getElementById("review").append(document.createElement("br"))
     }
 
-
-
-
-
-
-
-
-
-
-
-
 }
-
