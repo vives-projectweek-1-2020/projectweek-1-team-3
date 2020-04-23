@@ -14,18 +14,17 @@ function Reviewstable() {
 
     var head = document.createElement("div");
     head.className("head")
-    head.append(identifacation)
-    head.append(rating)
     head.style.display = flex
     head.style.backgroundColor = lightgrey
     var identifacation = document.createElement("h5")
     identifacation.innerHTML = "innerhtml"
     var rating = document.createElement("h5")
     rating.innerHTML = "innerhtml"
+    head.append(identifacation)
+    head.append(rating)
 
     var metaininfo = document.createElement("div");
     metaininfo.className("metaininfo")
-    
     metaininfo.style.display = flex
     metaininfo.style.backgroundColor = lightgrey
     var name = document.createElement("h6")
