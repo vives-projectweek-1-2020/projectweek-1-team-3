@@ -31,9 +31,9 @@ function initMap() {
         });
     }).then(function (value) {
         console.log(value)
-        var bp = { lat: 51.30, lng: 3.14 };
+        var bp = { lat: 51.05389, lng: 3.705 };
         var map = new google.maps.Map(document.getElementById('googleMap'), {
-            zoom: 11,
+            zoom: 9.5,
             center: bp,
             maxZoom: 20,
             minZoom: 9,
