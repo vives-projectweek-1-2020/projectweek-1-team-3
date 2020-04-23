@@ -1,71 +1,35 @@
-class userData extends HTMLElement {
-    get value() {
-        return this.getAttribute('value') || 0;
-    }
+const stars = document.querySelector(".initialRating").children;
+let ratingValue;
+let index;
 
-    set value(val) {
-        this.setAttribute('value', val);
-        this.highlight(this.value - 1);
-    }
-
-    get number() {
-        return this.getAttribute('number') || 5;
-    }
-
-    set number(val) {
-        this.setAttribute('number', val);
-
-        this.stars = [];
-
-        while (this.firstChild) {
-            this.removeChild(this.firstChild);
+for(let i=0; i<stars.length; i++){
+    stars[i].addEventListener("mouseover", function(){
+        console.log(i);
+        for(let j=0; j<stars.length; j++){
+            stars[j].classList.remove("fa-star");
+            stars[j].classList.add("fa-star-o");
         }
-
-        for (let i = 0; i < this.number; i++) {
-            let s = document.createElement('div');
-            s.className = 'star';
-            this.appendChild(s);
-            this.stars.push(s);
+        for(let j=0; j<=i; j++){
+            stars[j].classList.remove("fa-star-o");
+            stars[j].classList.add("fa-star");
         }
-
-        this.value = this.value;
-    }
-
-    highlight(index) {
-        this.stars.forEach((star, i) => {
-            star.classList.toggle('full', i <= index);
-        });
-    }
-
-    constructor() {
-        super();
-
-        this.number = this.number;
-
-        this.addEventListener('mousemove', e => {
-            let box = this.getBoundingClientRect(),
-                starIndex = Math.floor((e.pageX - box.left) / box.width * this.stars.length);
-
-            this.highlight(starIndex);
-        });
-
-        this.addEventListener('mouseout', () => {
-            this.value = this.value;
-        });
-
-        this.addEventListener('click', e => {
-            let box = this.getBoundingClientRect(),
-                starIndex = Math.floor((e.pageX - box.left) / box.width * this.stars.length);
-
-            this.value = starIndex + 1;
-
-            let rateEvent = new Event('rate');
-            this.dispatchEvent(rateEvent);
-        });
-    }
+    })
+    stars[i].addEventListener("click", function(){
+        ratingValue = i+1;
+        index=i;
+    })
+    stars[i].addEventListener("mouseout", function(){
+        for(let j=0; j<stars.length; j++){
+            stars[j].classList.remove("fa-star");
+            stars[j].classList.add("fa-star-o");
+        }
+        for(let j=0; j<=index; j++){
+            stars[j].classList.remove("fa-star-o");
+            stars[j].classList.add("fa-star");
+        }
+    })
 }
 
-customElements.define('x-star-rating', userData);
 
 let submit_button = document.getElementById("submit");
 let username = document.getElementById("userName");
@@ -81,7 +45,7 @@ submit_button.addEventListener('click', function displayData() {
         console.log(username.value);
         console.log(shopname.value);
         console.log(city.value);
-        console.log(rating.value);
+        console.log(ratingValue);
         console.log(review.value);
         alert("Your review has been submitted.");
     }
@@ -101,7 +65,7 @@ function dataValidator() {
         IsvalidData = false;
         alert("length of village name must be within 2-30 characters");
     }
-    if (!(rating.value >= 0 && rating.value <= 5)) {
+    if (!(ratingValue >= 0 && ratingValue <= 5)) {
         IsvalidData = false;
         alert("Rating must be between 0 and 5")
     }
