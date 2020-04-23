@@ -76,14 +76,14 @@ h1{
 
 .search-container{
     display: flex;
-    width: 300px;
+    width: 200px;
     height: 50px;
     margin-top: 8px;
     
 }
 .search-container button{
     padding: 6px 10px;
-    width: 50px;
+    width: 60px;
     background: #ddd;
     font-size: 17px;
     border: none;
