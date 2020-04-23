@@ -82,35 +82,20 @@ form input{
 h1{
     padding-top: 50px;
 }
-
-.initialRating{
-    font-size: 28px;
-    color: #FF9800;
-}
-.topnav{
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.search-container{
-    display: flex;
-    width: 300px;
-    height: 50px;
-    margin-top: 8px;
-    
-}
-.search-container button{
-    padding: 6px 10px;
-    width: 50px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
-
-#reviewbox{
+.reviewbox{
     border: 1px solid black;
     border-radius: 3px;
     margin-bottom: 30px;
+
+}
+
+.head h5, .metainfo h6{
+    padding: 6px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+#b1, #b2, #b3, #b4, #b5{
+    border: transparent;
+    background-color: transparent;
 }
