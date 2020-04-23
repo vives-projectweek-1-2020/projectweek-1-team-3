@@ -9,7 +9,6 @@ const pool = mariadb.createPool({
 });
 async function getAllLocations() {
   let conn;
-  console.log("db")
   var rows
   try {
     conn = await pool.getConnection();
@@ -30,7 +29,6 @@ async function getAllLocations() {
 
 async function insertReview(Review) {
   let conn;
-  console.log("db")
   var rows
   try {
     // console.log(Review)
