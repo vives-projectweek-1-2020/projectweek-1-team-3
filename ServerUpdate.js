@@ -39,6 +39,25 @@ function initMap() {
             minZoom: 9,
             mapTypeControl: true
         });
+
+
+        //new
+         // Create the search box and link it to the UI element.
+         var input = document.getElementById('pac-input');
+         var searchBox = new google.maps.places.SearchBox(input);
+         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+ 
+         // Bias the SearchBox results towards current map's viewport.
+         map.addListener('bounds_changed', function() {
+           searchBox.setBounds(map.getBounds());
+         });
+
+         
+
+
+
+
+
         var iw = new google.maps.InfoWindow();
         var oms = new OverlappingMarkerSpiderfier(map, {
             markersWontMove: true,
@@ -47,6 +66,7 @@ function initMap() {
         });
         var locations = [];
         var clusterMarker = [];
+        
 
         for (i = 0; i < value.length; i++) {
         //locations.push(["Brugge", 51.209348, 3.2246995])  //mysql coordinaten hier ingeven
