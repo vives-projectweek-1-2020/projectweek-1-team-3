@@ -2,6 +2,12 @@ var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var db = require("./Database.js")
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
@@ -17,8 +23,6 @@ app.get('/red-dot.png', (req, res) => {
 app.get('/green-dot.png', (req, res) => {
   res.sendFile(__dirname + '/pages/green-dot.png');
 });
-
-
 app.get('/map', (req, res) => {
   res.sendFile(__dirname + '/pages/map.html');
 });
@@ -44,15 +48,23 @@ app.get('/vivesLogo', (req, res) => {
   res.sendFile(__dirname + '/images/vivesLogo.png');
 });
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
 
-  socket.on('RequestAllLocaions', () => {
+app.post('/Submit_Review', (req, res) => {
+  //console.log(req.body)
+  db.insertReview(req.body)
+  res.send("Review submitted")
+  res.end()
+})
+
+io.on('connection', (socket) => {
+  //console.log('a user connected');
+
+  socket.on('RequestAllLocations', () => {
     new Promise((resolve, reject) => {
       stateQ = db.getAllLocations();
       resolve(stateQ)
     }).then(function (value) {
-      console.log(value)
+      //console.log(value)
       socket.emit("SendAllLocations", value);
     }).catch(function (err) {
       socket.emit("Error", err);
@@ -61,7 +73,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    //console.log('user disconnected');
   });
 
 });
