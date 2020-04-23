@@ -49,9 +49,9 @@ function initMap() {
         var clusterMarker = [];
 
         for (i = 0; i < value.length; i++) {
-        //locations.push(["Brugge", 51.209348, 3.2246995])  //mysql coordinaten hier ingeven
-        //locations.push(["Gent", 51.0543422, 3.7174243])
-        locations.push([value[i].locatie, value[i].longitude,value[i].latitude,value[i].rating])
+            //locations.push(["Brugge", 51.209348, 3.2246995])  //mysql coordinaten hier ingeven
+            //locations.push(["Gent", 51.0543422, 3.7174243])
+            locations.push([value[i].locatie, value[i].longitude, value[i].latitude, value[i].rating])
         }
 
 
@@ -113,6 +113,86 @@ function initMap() {
         socket.emit("Error", err);
         console.log(err);
     })
+
+}
+function RequestReviews() {
+    console.log("fgdfns")
+    socket.emit("RequestAllReviews")
+    socket.on("SendAllReviews", function (data) {
+
+        PrintReviews(data)
+    })
+}
+function PrintReviews(data) {
+
+    for (var i = 0; i < data.length; i++) {
+        var reviewbox = document.createElement("div");
+        reviewbox.className = "reviewbox"
+        reviewbox.style.borderColor = "gray"
+        reviewbox.style.borderStyle = "groove"
+
+        var head = document.createElement("div");
+        head.className = "head"
+        head.setAttribute("style", "display: flex; background-color: lightgrey;")
+        
+        var identifacation = document.createElement("h5")
+        identifacation.className = "identification"
+        identifacation.innerHTML = data[i].locatie
+        identifacation.style.paddingLeft = "2px"
+        
+        var rating = document.createElement("h5")
+        rating.innerHTML = data[i].rating + "&#10025"
+        rating.className = "rating"
+        rating.setAttribute("style", "text-align: right; padding-left: 10px;")
+
+
+        head.append(identifacation)
+        head.append(rating)
+
+        reviewbox.append(head)
+
+        var metaininfo = document.createElement("div");
+        metaininfo.className = "metaininfo"
+        metaininfo.setAttribute("style", "padding-left: 2px; display: flex; background-color: lightgrey;")
+
+        var name = document.createElement("h6")
+        name.innerHTML = data[i].username
+        metaininfo.append(name)
+
+        var date = document.createElement("h6")
+        date.innerHTML = data[i].timestamp
+        date.setAttribute("style", "text-align: right; padding-left: 10px;")
+        metaininfo.append(date)
+
+        reviewbox.append(metaininfo)
+
+        var article = document.createElement("article");
+        article.className = "article"
+        article.style.height = '200px'
+        article.style.overflow = scroll
+
+        var reviewBlock = document.createElement("p")
+        reviewBlock.style.padding = '6px'
+        reviewBlock.id = "reviewBlock"
+        reviewBlock.innerHTML = data[i].review
+        article.append(reviewBlock)
+
+        reviewbox.append(article)
+
+        document.getElementById("review").append(reviewbox)
+        document.getElementById("review").append(document.createElement("br"))
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

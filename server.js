@@ -3,10 +3,10 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var db = require("./Database.js")
 var bodyParser = require('body-parser')
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
-})); 
+}));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -29,6 +29,9 @@ app.get('/map', (req, res) => {
 app.get('/reviews', (req, res) => {
   res.sendFile(__dirname + '/pages/reviews.html');
 });
+// app.get('/reviews.js', (req, res) => {
+//   res.sendFile(__dirname + '/pages/reviews.js');
+// });
 app.get('/tos', (req, res) => {
   res.sendFile(__dirname + '/pages/tos.html');
 });
@@ -66,6 +69,19 @@ io.on('connection', (socket) => {
     }).then(function (value) {
       //console.log(value)
       socket.emit("SendAllLocations", value);
+    }).catch(function (err) {
+      socket.emit("Error", err);
+      console.log(err);
+    })
+  });
+  socket.on('RequestAllReviews', () => {
+    console.log("fgdfns")
+    new Promise((resolve, reject) => {
+      stateQ = db.getAllLocations();
+      resolve(stateQ)
+    }).then(function (value) {
+      console.log("afgknarfghnpri")
+      socket.emit("SendAllReviews", value);
     }).catch(function (err) {
       socket.emit("Error", err);
       console.log(err);
