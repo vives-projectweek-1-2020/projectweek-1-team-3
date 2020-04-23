@@ -108,3 +108,9 @@ h1{
     border: none;
     cursor: pointer;
 }
+
+#reviewbox{
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}

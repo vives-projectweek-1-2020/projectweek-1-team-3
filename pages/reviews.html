@@ -61,20 +61,20 @@
                         onClick="location.href='/userReview'" value='Write Review'>
                     </div>
                     <div class="search-container">
-                        <form class="search-container" action="">
+                        <form class="search-container">
                             <input type="text" placeholder="Search.." name="search">
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
                 </div>
 
-                
+
                 <h1 style="margin-top: -15px;">Reviews:</h1>
-                <div class="reviewbox">
+                <article id="review">
+                <div id="reviewbox">
                     
                 </div>
 
-                <article id="review">
                 </article>
                 <script>
                     var codeblock =
@@ -106,7 +106,7 @@
                         text += codeblock[i] + "<br>";
                     }
 
-                    document.getElementById("review").innerHTML = codeblock
+                    document.getElementById("reviewbox").innerHTML = codeblock
 
                 </script>
                 <!-- <div class="reviewbox">
