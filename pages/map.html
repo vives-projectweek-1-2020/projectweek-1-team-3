@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>SafetyAdvisor |Map</title>
+<meta name="description" content="Particula">
+<script src="/map.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SafetyAdvisor |Map</title>
-    <meta name="description" content="Particula">
-    <script src="/map.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+    src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC55Q7jdC1Tqjo81u2xy9C7GF2Mylx1FfM&callback=initMap"
-        type="text/javascript"></script>
-    <meta name="author" content="Project week 1 team 3">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-</head>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC55Q7jdC1Tqjo81u2xy9C7GF2Mylx1FfM&callback=initMap"
+    type="text/javascript"></script>
+<meta name="author" content="Project week 1 team 3">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     body,
     h1,
@@ -71,36 +66,30 @@
             <div class="w3-twothird" style="width:100%; height:100%">
 
                 <div class="mapstyle" style="height: 100%;overflow: hidden;">
-                    <td width="100%" style="padding:10px 50px;background-color:#FFF; font-size:16px;">
                         <h1>Google Map</h1>
                         <grid id="grid">
                             <div id="googleMap" style="width:100%; height:500px; float: left;"></div>
 
                             <div id="legend" style="display: none;">
                                 <!--style="display:none"-->
-                                <p><i>Winkel:</i> <i id="winkel">... </i> </p>
-                                <p><i>CoronaMaatregelen:</i> <i id="maatregelen">... </i> </p>
+                                <p><i>store:</i> <i id="winkel">... </i> </p>
+                                <p><i>Takes measures:</i> <i id="maatregelen">... </i> </p>
                                 <p><i>Score:</i> <i id="score">... </i> </p>
 
                             </div>
 
                             <div class="text-block">
-
-                                <p><img src="green-dot.png">Houdt zich aan de regels.</p>
-                                <p><img src="red-dot.png">Houdt niet aan de regels.</p>
+                                <p><img src="green-dot.png" alt="">Has enough measures.</p>
+                                <p><img src="red-dot.png" alt="">Lacks some measures.</p>
                             </div>
-
+                        </grid>
                 </div>
-                </td>
-
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
 
 </body>
