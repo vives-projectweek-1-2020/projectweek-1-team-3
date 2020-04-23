@@ -69,7 +69,7 @@ function initMap() {
       iw.open(map, marker);
       
       document.getElementById("winkel").innerHTML=" aflezen uit mysql";  //mysql importeren hier
-      document.getElementById("maatregelen").innerHTML="Ja";
+      document.getElementById("maatregelen").innerHTML="Yes";
       document.getElementById("score").innerHTML="0/5";
       
       document.getElementById("legend").style.display = "block";
