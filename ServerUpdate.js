@@ -148,8 +148,7 @@ function PrintReviews(data) {
     for (var i = 0; i < data.length; i++) {
         var reviewbox = document.createElement("div");
         reviewbox.className = "reviewbox"
-        reviewbox.style.borderColor = "gray"
-        reviewbox.style.borderStyle = "groove"
+        reviewbox.setAttribute("style", "border-style: solid; border-radius: 5px; border-width: 1px; ")
 
         var head = document.createElement("div");
         head.className = "head"
@@ -157,13 +156,14 @@ function PrintReviews(data) {
         
         var identifacation = document.createElement("h5")
         identifacation.className = "identification"
-        identifacation.innerHTML = data[i].locatie
+        identifacation.innerHTML = data[i].shop + "  " + data[i].locatie;
         identifacation.style.paddingLeft = "2px"
+        identifacation.style.width = "100%"
         
         var rating = document.createElement("h5")
         rating.innerHTML = data[i].rating + "&#10025"
         rating.className = "rating"
-        rating.setAttribute("style", "text-align: right; padding-left: 10px;")
+        rating.setAttribute("style", "text-align: right; padding-left: 10px; width: 100%;")
 
 
         head.append(identifacation)
@@ -177,11 +177,13 @@ function PrintReviews(data) {
 
         var name = document.createElement("h6")
         name.innerHTML = data[i].username
+        name.style.width = "100%"
+        
         metaininfo.append(name)
 
         var date = document.createElement("h6")
         date.innerHTML = data[i].timestamp
-        date.setAttribute("style", "text-align: right; padding-left: 10px;")
+        date.setAttribute("style", "text-align: right; padding-left: 10px; width: 100%;")
         metaininfo.append(date)
 
         reviewbox.append(metaininfo)
