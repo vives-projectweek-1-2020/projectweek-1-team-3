@@ -1,10 +1,10 @@
 const mariadb = require('mariadb');
 const pool = mariadb.createPool({
-  host: '91.178.124.103',
+  host: process.env.DB_HOST,
   port: '3306',
-  user: 'vivesteam3',
-  password: 'vivesteam3',
-  database: 'projectweek1',
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   connectionLimit: 50
 });
 async function getAllLocations() {
@@ -17,13 +17,11 @@ async function getAllLocations() {
 
     // const res = await conn.query("INSERT INTO myTable value (?, ?)", [1, "mariadb"]);
     // console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
-
   } catch (err) {
     throw err;
   } finally {
-    // conn.end()
+    conn.end()
     return rows
-    //if (conn) return conn.end();
   }
 }
 
@@ -31,10 +29,10 @@ async function insertReview(Review) {
   let conn;
   var rows
   try {
-    // console.log(Review)
+    console.log(Review)
     // console.log(Review.Username)
     conn = await pool.getConnection();
-    const res = await conn.query("INSERT INTO data (username, locatie, review,rating,longitude,latitude) VALUES (?,?,?,?,?,?)", [Review.Username, Review.location,Review.review, Review.rating,51.209348,3.2246995]);
+    const res = await conn.query("INSERT INTO data (username, locatie, review,rating,longitude,latitude, shop) VALUES (?,?,?,?,?,?,?)", [Review.Username, Review.location,Review.review, Review.rating, Review.long,Review.lat, Review.shop]);
     console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
     ///const res = await conn.query("INSERT INTO myTable value (?, ?)", [1, "mariadb"]);
     // console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
