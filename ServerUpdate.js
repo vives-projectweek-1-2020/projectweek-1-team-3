@@ -1,23 +1,29 @@
 
 var socket = io();
-function RequestAllLocaions(){
+function RequestAllLocaions() {
     socket.emit("RequestAllLocaions");
-    socket.on("SendAllLocations", function(data){
+    socket.on("SendAllLocations", function (data) {
         console.log(data)
     })
 }
-var Username =document.getElementById()
-var Shop = document.getElementById()
-var City = document.getElementById()
-var Rating = document.getElementById()
-var Review = document.getElementById()
-document.getElementById("button").addEventListener("click", PushAllData);
-function PushAllData(){
+
+
+/* document.getElementById("button").addEventListener("click", PushAllData);
+function PushAllData() {
+    var Username = document.getElementById(userName).value
+    var Shop = document.getElementById(shopName).value
+    var City = document.getElementById(location).value
+    var Rating = ratingValue
+    var Review = document.getElementById(review).value
     document.getElementById("id")
     var list = [];
-    list.push(Username)
-    list.push(Shop)
-    list.push(City)
-    list.push(Rating)
-    list.push(Review)
-}
+
+    if (Username != "" && Shop != "" && City != "" && Rating != "" && Review != "") {
+        list.push(Username)
+        list.push(Shop)
+        list.push(City)
+        list.push(Rating)
+        list.push(Review)
+        socket.emit(PushAllData)
+    }
+} */

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SafetyAdvisor |reviews</title>
+    <script src="reviews.js"></script>
+
     <meta name="author" content="Project week 1 team 3">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
@@ -13,6 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <style>
@@ -51,6 +54,7 @@
     <div class="w3-row-padding w3-padding-64 w3-container">
         <div class="w3-content">
             <div class="w3-col.s1{width:70%}">
+
                 <div class="topnav">
                     <div>
                         <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type=button
@@ -63,10 +67,69 @@
                         </form>
                     </div>
                 </div>
+
+                
                 <h1 style="margin-top: -15px;">Reviews:</h1>
                 <div class="reviewbox">
                     
                 </div>
+
+                <article id="review">
+                </article>
+                <script>
+                    var codeblock =
+                        '<div class="head" style="display: flex; background-color: lightgrey;">' +
+                        '<h5 class="identifacation">De Warme Bakker  Westende</h5>' +
+                        '<h5 class="rating" style="text-align: right;">🟡🟡🟡🟡🟡</h5>' +
+                        '</div>' +
+                        '<div class="metainfo" style="display: flex; background-color: lightgrey;">' +
+                        '<h6>Thomas Luca</h6>' +
+                        '<h6 style="text-align: right">26/04/2020</h6>' +
+                        '</div>' +
+                        '<article style="height: 200px; overflow-y: scroll;">' +
+                        '<p style="padding: 6px;">' +
+                        'Pros: <br>' +
+                        '- Employees are standing behind plexiglass <br>' +
+                        '- Possibility to pay contactless <br>' +
+                        '- A limit on amount of people that can enter the bakery <br>' +
+                        'Cons: <br>' +
+                        '</p>' +
+                        '</article>';
+
+                    //document.getElementById("review").innerHTML = codeblock
+
+
+                    var id = 4;
+                    var text = "";
+
+                    for (var i = 0; i < 4; i++) {
+                        text += codeblock[i] + "<br>";
+                    }
+
+                    document.getElementById("review").innerHTML = codeblock
+
+                </script>
+                <!-- <div class="reviewbox">
+                        <div class="head" style="display: flex; background-color: lightgrey;">
+                            <h5 class="identifacation">De Warme Bakker  Westende</h5>
+                            <h5 class="rating" style="text-align: right;">🟡🟡🟡🟡🟡</h5>
+                        </div>
+                        <div class="metainfo" style="display: flex; background-color: lightgrey;">
+                            <h6>Thomas Luca</h6>
+                            <h6 style="text-align: right">26/04/2020</h6>
+                        </div>
+                        <article style="height: 200px; overflow-y: scroll;">
+                            <p style="padding: 6px;">
+                                Pros: <br>
+                                - Employees are standing behind plexiglass <br>
+                                - Possibility to pay contactless <br>
+                                - A limit on amount of people that can enter the bakery <br> 
+                                Cons: <br>
+                                - /
+                            </p>
+                        </article>
+                    </div>     -->
+            </div>
         </div>
     </div>
 
