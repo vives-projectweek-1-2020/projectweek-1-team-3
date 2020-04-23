@@ -104,7 +104,8 @@ function initMap() {
                 iw.setContent(marker.shop); //uitmysql halen colom winkel
                 iw.open(map, marker);
 
-                document.getElementById("winkel").innerHTML = marker.title;  //mysql importeren hier
+                document.getElementById("winkel").innerHTML = marker.shop;  
+                document.getElementById("adress").innerHTML = marker.title;
                 document.getElementById("maatregelen").innerHTML = "Ja";
                 document.getElementById("score").innerHTML = marker.rating + "/5";
 
