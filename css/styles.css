@@ -87,3 +87,24 @@ h1{
     font-size: 28px;
     color: #FF9800;
 }
+.topnav{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-container{
+    display: flex;
+    width: 300px;
+    height: 50px;
+    margin-top: 8px;
+    
+}
+.search-container button{
+    padding: 6px 10px;
+    width: 50px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
