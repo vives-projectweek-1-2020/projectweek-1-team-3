@@ -31,7 +31,7 @@ Klaar? Plaats ✔️.
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
 | ✔️ Legenda | ✔️ Locaties  | ✔️ Markers op kaart  |
-| ✔️ Kaart  | ✔️ Reviews| ❌ winkel zoeken op de kaart |
+| ✔️ Kaart  | ✔️ Reviews| ✔️ winkel zoeken op de kaart |
 | ✔️ Database  | ✔️ Reviewslijst | ❌ Categoriën |
 | ✔️ Node.js applicatie  | | |
 
