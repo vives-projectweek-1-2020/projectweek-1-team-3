@@ -107,7 +107,7 @@ function initMap() {
 
                 document.getElementById("winkel").innerHTML = marker.shop;
                 document.getElementById("adress").innerHTML = marker.title;
-                document.getElementById("maatregelen").innerHTML = "Ja";
+                document.getElementById("review").innerHTML = marker.review;
                 document.getElementById("score").innerHTML = marker.rating + "/5";
 
                 document.getElementById("legend").style.display = "block";
