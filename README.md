@@ -6,26 +6,26 @@ This project contains the code for a website called safety-advisors-19. This web
 
 Help protecting your community by leaving a review.
 Stay safe!
-
+#### Youtube commercial
+-
 ## Tasks
 
-1. Legende aanmaken (rood en groen aangeven voor wat ze staan regel 5) 
+1. Legende aanmaken, legende voor de markers en legende voor als je op de marker klikt
 
 2. Via google maps kaart werken (via API) 
 
-3. Database 
+3. Database met reviews, nadat reviews door gebruikers zijn aangemaakt
 
 4. Winkels/publieke locaties … 
 
-5. Al dan niet open + openingstijden (Open aanduiden door groen of rood) 
+5. Maatregelen die de winkels nemen 
 
-6. Maatregelen die de winkels nemen 
+6. kan winkels opzoeken op de kaart en deze weergeven met de bijnodige informatie
 
-7. Wachtrij? Drukste en rustige uren (misschien via API) 
-
-8. Afstand van jou weg (fiets of te voet) 
 
  --> user input: plaats + review + comment maatregelen
+ --> worden dan naar database gestuurd en daarna weer uit de database gehaald
+ 
 Klaar? Plaats ✔️.
 
 | Must Have | Should have | Could have |
