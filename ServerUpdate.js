@@ -62,7 +62,7 @@ function initMap() {
 
 
         for (i = 0; i < value.length; i++) {
-            locations.push([value[i].locatie, value[i].latitude, value[i].longitude, value[i].rating, value[i].shop])
+            locations.push([value[i].locatie, value[i].latitude, value[i].longitude, value[i].rating, value[i].shop, value[i].review])
         }
 
 
@@ -95,6 +95,7 @@ function initMap() {
                 icon: image,
                 rating: item[3],
                 shop: item[4],
+                review: item[5],
                 // map: map,
             });
 
@@ -106,7 +107,7 @@ function initMap() {
 
                 document.getElementById("winkel").innerHTML = marker.shop;
                 document.getElementById("adress").innerHTML = marker.title;
-                document.getElementById("maatregelen").innerHTML = "Ja";
+                document.getElementById("review").innerHTML = marker.review;
                 document.getElementById("score").innerHTML = marker.rating + "/5";
 
                 document.getElementById("legend").style.display = "block";
