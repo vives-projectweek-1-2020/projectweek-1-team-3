@@ -112,7 +112,8 @@ function initMap() {
 
                 document.getElementById("legend").style.display = "block";
 
-                setTimeout(function () { document.getElementById("legend").style.display = "none"; }, 10000);
+                //setTimeout(function () { document.getElementById("legend").style.display = "none"; }, 10000);
+
             });
             
             
