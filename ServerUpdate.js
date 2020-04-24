@@ -142,7 +142,7 @@ function search(markerList) {
     })
 }
 function RequestReviews() {
-    console.log("fgdfns")
+    
     socket.emit("RequestAllReviews")
     socket.on("SendAllReviews", function (data) {
 

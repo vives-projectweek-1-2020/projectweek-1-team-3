@@ -99,12 +99,12 @@ io.on('connection', (socket) => {
     })
   });
   socket.on('RequestAllReviews', () => {
-    console.log("fgdfns")
+    
     new Promise((resolve, reject) => {
       stateQ = db.getAllLocations();
       resolve(stateQ)
     }).then(function (value) {
-      console.log("afgknarfghnpri")
+      
       socket.emit("SendAllReviews", value);
     }).catch(function (err) {
       socket.emit("Error", err);
