@@ -30,9 +30,9 @@ Klaar? Plaats ✔️.
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
-| ✔️ Legenda | ✔️ Locaties  | ❌ Wachtrij  |
-| ✔️ Kaart  | ❌ Openingstijden| ❌ Afstand tot gebruiker |
-| ✔️ Database  | ❌ Maatregelen | ❌ Categoriën |
+| ✔️ Legenda | ✔️ Locaties  | ✔️ Markers op kaart  |
+| ✔️ Kaart  | ✔️ Revieuws| ❌ winkel zoeken op de kaart |
+| ✔️ Database  | ✔️ Reviewslijst | ❌ Categoriën |
 | ✔️ Node.js applicatie  | | |
 
 review werkende (includes maatregelen en wachtrij) ❌
