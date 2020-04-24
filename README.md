@@ -6,27 +6,40 @@ This project contains the code for a website called safety-advisors-19. This web
 
 Help protecting your community by leaving a review.
 Stay safe!
-#### Youtube commercial
--
+
+### Youtube commercial
+- (https://www.youtube.com/watch?v=fb9W6EN1jmg&feature=youtu.be)
+
+### Installation process
+##### To launch this site u will need:
+- Raspberry-pi/server
+- Mysql database
+- Node.js
+- Visual Studio code
+##### How to launch
+1. Clone this project.
+2. Setup a server using mysql database.
+3. Install node.js .
+4. Launch the server with "node server.js" follow the link that is given.
+
 ## Tasks
 
-1. Legende aanmaken, legende voor de markers en legende voor als je op de marker klikt
+1. Make a legend with markers, when u click the marker another legend opens.
 
-2. Via google maps kaart werken (via API) 
+2. Usage of google maps with api key.
 
-3. Database met reviews, nadat reviews door gebruikers zijn aangemaakt
+3. Database with the reviews that been writte by the users.
 
-4. Winkels/publieke locaties … 
+4. Stores/public locations
 
-5. Maatregelen die de winkels nemen 
+5. What measures do the shop takes?
 
-6. kan winkels opzoeken op de kaart en deze weergeven met de bijnodige informatie
+6. Can visit the stores on the map and can see all the information from the storen when u click on it.
 
-
- --> user input: plaats + review + comment maatregelen
- --> worden dan naar database gestuurd en daarna weer uit de database gehaald
+ --> user input: place + review + comment measures
+ --> after the user submitted the review it goes to to the database then the gooogle map and review section takes information from the database.
  
-Klaar? Plaats ✔️.
+Ready? Place ✔️.
 
 | Must Have | Should have | Could have |
 | --- | --- | --- | 
@@ -35,7 +48,7 @@ Klaar? Plaats ✔️.
 | ✔️ Database  | ✔️ Reviewslijst | ❌ Categoriën |
 | ✔️ Node.js applicatie  | | |
 
-review werkende (includes maatregelen en wachtrij) ❌
+Working review (includes measures place with coordinates nickname...) 
 
 ## Members
 - [Thybris Vandenbroucke](https://github.com/thybris)
