@@ -21,7 +21,7 @@ function requestLocations(callback) {
     })
     getUpdateData();
 }
-
+var map
 function initMap() {
     new Promise((resolve, reject) => {
         var stateQ;
@@ -32,11 +32,11 @@ function initMap() {
     }).then(function (value) {
         console.log(value)
         var bp = { lat: 51.0543422, lng: 3.7174243 };
-        var map = new google.maps.Map(document.getElementById('googleMap'), {
-            zoom: 9,
+        map = new google.maps.Map(document.getElementById('googleMap'), {
+            zoom: 8,
             center: bp,
             maxZoom: 20,
-            minZoom: 7,
+            minZoom: 4,
             mapTypeControl: true
         });
 
@@ -64,7 +64,7 @@ function initMap() {
         for (i = 0; i < value.length; i++) {
             locations.push([value[i].locatie, value[i].latitude, value[i].longitude, value[i].rating, value[i].shop, value[i].review])
         }
-
+        // var  markerlist = locations
 
         //var rating = 1;
 
@@ -86,9 +86,6 @@ function initMap() {
                     zIndex: 100
                 }
             }
-
-
-
             var marker = new google.maps.Marker({
                 position: { lat: item[1], lng: item[2] },
                 title: String(item[0]),
@@ -98,8 +95,6 @@ function initMap() {
                 review: item[5],
                 // map: map,
             });
-
-
 
             oms.addListener('click', function (marker) {
                 iw.setContent(marker.shop); //uitmysql halen colom winkel
@@ -115,9 +110,6 @@ function initMap() {
                 //setTimeout(function () { document.getElementById("legend").style.display = "none"; }, 10000);
 
             });
-            
-            
-           
             oms.addMarker(marker);
             clusterMarker.push(marker);
         }
@@ -125,14 +117,28 @@ function initMap() {
             maxZoom: 11,
             imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',//standard cluster markers
         });
+        search(locations)
     }).catch(function (err) {
         socket.emit("Error", err);
         console.log(err);
     })
 
 }
-
-
+function search(markerList) {
+    var searchinput = document.getElementById("search")
+    searchinput.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            for (var i = 0; i < markerList.length; i++) {
+                console.log(markerList[i])
+                if (markerList[i][4].toLowerCase() == searchinput.value.toLowerCase()) {
+                    console.log(markerList[i][1], markerList[i][2])
+                    map.setCenter({lat: parseFloat(markerList[i][1]),lng: parseFloat(markerList[i][2])})
+                    map.setZoom(15)
+                }
+            }
+        }
+    })
+}
 function RequestReviews() {
     console.log("fgdfns")
     socket.emit("RequestAllReviews")
@@ -202,6 +208,6 @@ function PrintReviews(data) {
     }
 
 }
-function filtermarkers(){
-    
+function filtermarkers() {
+
 }
