@@ -15,8 +15,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyBapC08lQSjzK3EjliUyI89EB7j6a7YRZE&callback=initMap" 
-        type="text/javascript"></script>
+  src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyBapC08lQSjzK3EjliUyI89EB7j6a7YRZE&callback=initMap"
+  type="text/javascript"></script>
 
 <style>
   body,
@@ -70,51 +70,55 @@
           </div>
           <div class="form-group">
             <label for="location" class="w3-padding-32" style="margin-top: 40px;">City/Village:</label><br>
-          <input type="text" id="location" style="margin-top: 10px; margin-bottom: 30px"><br>
+            <input type="text" id="location" style="margin-top: 10px; margin-bottom: 30px"><br>
           </div>
           <div class="form-group">
             <label for="rating" class="w3-padding-32">Rating:</label><br>
-              <div class="initialRating">
-                <span class="fa fa-star-o"></span>
-                <span class="fa fa-star-o"></span>
-                <span class="fa fa-star-o"></span>
-                <span class="fa fa-star-o"></span>
-                <span class="fa fa-star-o"></span>
-              </div>
+            <div class="initialRating">
+              <span class="fa fa-star-o"></span>
+              <span class="fa fa-star-o"></span>
+              <span class="fa fa-star-o"></span>
+              <span class="fa fa-star-o"></span>
+              <span class="fa fa-star-o"></span>
+            </div>
           </div>
           <div class="form-group">
             <label for="review" style="margin-top: 30px;">Review:</label><br>
             <textarea name="review" id="review" cols="40" rows="5" style="margin-top: 10px;"></textarea>
           </div>
-          <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type=submit style="width: 90%;" id="submit"
-            value='Submit review' onclick="submitReview()">
+          <input class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type=submit style="width: 90%;"
+            id="submit" value='Submit review' onclick="submitReview()">
           <!-- </form> -->
         </div>
       </div>
     </div>
   </div>
   <script>
-    
+
     function submitReview() {
-      console.log("submit")
-      var postData = {};
-      postData = { 'Header': "Review", 'Username': username.value, 'shop': shopname.value, 'location': shopname.value + ' ' + city.value, 'rating': ratingValue, 'review': review.value };
+      if (username.value != "" && shopname.value != "" && city.value != "" && ratingValue != "" && review.value != "") {
+        console.log("submit")
+        var postData = {};
+        postData = { 'Header': "Review", 'Username': username.value, 'shop': shopname.value, 'location': shopname.value + ' ' + city.value, 'rating': ratingValue, 'review': review.value };
 
-      console.log(city.value)
+        console.log(city.value)
 
-      $.ajax({//ajax request naar de webapi
-        url: "/Submit_Review",
-        data: postData,
-        type: "POST",
-        crossDomain: true,
-        dataType: "json",
-        success: function (response) {
-          console.log(response.responseText)
-        },
-        error: function (response) {
-          console.log(response.responseText)
-        }
-      });
+        $.ajax({//ajax request naar de webapi
+          url: "/Submit_Review",
+          data: postData,
+          type: "POST",
+          crossDomain: true,
+          dataType: "json",
+          success: function (response) {
+            console.log(response.responseText)
+            location.replace("/reviews")
+          },
+          error: function (response) {
+            console.log(response.responseText)
+            location.replace("/reviews")
+          }
+        });
+      }
     }
   </script>
   <!-- Footer -->
@@ -123,4 +127,5 @@
   </footer>
   <script src="userData.js"></script>
 </body>
+
 </html>
