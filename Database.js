@@ -5,14 +5,15 @@ const pool = mariadb.createPool({
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  connectionLimit: 50
+  connectionLimit: 5
 });
+
 async function getAllLocations() {
-  let conn;
+  //let conn;
   var rows
-  try {
-    conn = await pool.getConnection();
-    rows = await conn.query("SELECT * FROM data");
+  try {let conn = await pool.getConnection();
+    //conn = 
+    rows = await conn.query("SELECT * FROM data ORDER BY timestamp DESC");
     //console.log(rows); //[ {val: 1}, meta: ... ]
 
     // const res = await conn.query("INSERT INTO myTable value (?, ?)", [1, "mariadb"]);
@@ -20,13 +21,13 @@ async function getAllLocations() {
   } catch (err) {
     throw err;
   } finally {
-    conn.end()
+    //conn.end()
     return rows
   }
 }
 
 async function insertReview(Review) {
-  let conn;
+  
   var rows
   try {
     console.log(Review)
@@ -41,7 +42,7 @@ async function insertReview(Review) {
     throw err;
   } finally {
     // conn.end()
-    return conn.end()
+    return //conn.end()
     //if (conn) return conn.end();
   }
 }
