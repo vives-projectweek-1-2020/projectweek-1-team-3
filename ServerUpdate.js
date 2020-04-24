@@ -107,6 +107,8 @@ function initMap() {
 
                 document.getElementById("legend").style.display = "block";
 
+                
+
                 //setTimeout(function () { document.getElementById("legend").style.display = "none"; }, 10000);
 
             });
@@ -211,3 +213,7 @@ function PrintReviews(data) {
 function filtermarkers() {
 
 }
+
+function closeFunction() {
+    document.getElementById("legend").style.display = "none";
+  }
