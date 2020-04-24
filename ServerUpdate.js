@@ -31,25 +31,25 @@ function initMap() {
         });
     }).then(function (value) {
         console.log(value)
-        var bp = { lat: 51.05389, lng: 3.705 };
+        var bp = { lat: 51.0543422, lng: 3.7174243 };
         var map = new google.maps.Map(document.getElementById('googleMap'), {
-            zoom: 9.5,
+            zoom: 9,
             center: bp,
             maxZoom: 20,
-            minZoom: 9,
+            minZoom: 7,
             mapTypeControl: true
         });
 
 
         // Create the search box and link it to the UI element.
- var input = document.getElementById('pac-input');
- var searchBox = new google.maps.places.SearchBox(input);
- map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
- // Bias the SearchBox results towards current map's viewport.
- map.addListener('bounds_changed', function() {
-   searchBox.setBounds(map.getBounds());
- });
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
 
         var iw = new google.maps.InfoWindow();
         var oms = new OverlappingMarkerSpiderfier(map, {
@@ -59,7 +59,7 @@ function initMap() {
         });
         var locations = [];
         var clusterMarker = [];
-        
+
 
         for (i = 0; i < value.length; i++) {
             locations.push([value[i].locatie, value[i].latitude, value[i].longitude, value[i].rating, value[i].shop, value[i].review])
@@ -105,7 +105,7 @@ function initMap() {
                 iw.setContent(marker.shop); //uitmysql halen colom winkel
                 iw.open(map, marker);
 
-                document.getElementById("winkel").innerHTML = marker.shop;  
+                document.getElementById("winkel").innerHTML = marker.shop;
                 document.getElementById("adress").innerHTML = marker.title;
                 document.getElementById("maatregelen").innerHTML = "Ja";
                 document.getElementById("score").innerHTML = marker.rating + "/5";
@@ -115,7 +115,9 @@ function initMap() {
                 //setTimeout(function () { document.getElementById("legend").style.display = "none"; }, 10000);
 
             });
-
+            
+            
+           
             oms.addMarker(marker);
             clusterMarker.push(marker);
         }
@@ -144,7 +146,8 @@ function PrintReviews(data) {
     for (var i = 0; i < data.length; i++) {
         var reviewbox = document.createElement("div");
         reviewbox.className = "reviewbox"
-        reviewbox.setAttribute("style", "border-style: solid; border-radius: 5px; border-width: 1px; ")
+        reviewbox.style.borderColor = "gray"
+        reviewbox.style.borderStyle = "groove"
 
         var head = document.createElement("div");
         head.className = "head"
@@ -152,15 +155,13 @@ function PrintReviews(data) {
 
         var identifacation = document.createElement("h5")
         identifacation.className = "identification"
-        identifacation.innerHTML = data[i].shop + "  " + data[i].locatie;
+        identifacation.innerHTML = data[i].locatie
         identifacation.style.paddingLeft = "2px"
-        identifacation.style.width = "100%"
-
 
         var rating = document.createElement("h5")
         rating.innerHTML = data[i].rating + "&#10025"
         rating.className = "rating"
-        rating.setAttribute("style", "text-align: right; padding-left: 10px; width: 100%;")
+        rating.setAttribute("style", "text-align: right; padding-left: 10px;")
 
 
         head.append(identifacation)
@@ -174,13 +175,11 @@ function PrintReviews(data) {
 
         var name = document.createElement("h6")
         name.innerHTML = data[i].username
-        name.style.width = "100%"
-        
         metaininfo.append(name)
 
         var date = document.createElement("h6")
         date.innerHTML = data[i].timestamp
-        date.setAttribute("style", "text-align: right; padding-left: 10px; width: 100%;")
+        date.setAttribute("style", "text-align: right; padding-left: 10px;")
         metaininfo.append(date)
 
         reviewbox.append(metaininfo)
@@ -202,4 +201,7 @@ function PrintReviews(data) {
         document.getElementById("review").append(document.createElement("br"))
     }
 
+}
+function filtermarkers(){
+    
 }
