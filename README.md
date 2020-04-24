@@ -8,7 +8,7 @@ Help protecting your community by leaving a review.
 Stay safe!
 
 ### Youtube commercial
-- (https://www.youtube.com/watch?v=fb9W6EN1jmg&feature=youtu.be)
+- https://www.youtube.com/watch?v=fb9W6EN1jmg&feature=youtu.be
 
 ### Installation process
 ##### To launch this site u will need:
