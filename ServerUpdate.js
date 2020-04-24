@@ -33,10 +33,10 @@ function initMap() {
         console.log(value)
         var bp = { lat: 51.0543422, lng: 3.7174243 };
         var map = new google.maps.Map(document.getElementById('googleMap'), {
-            zoom: 9,
+            zoom: 8,
             center: bp,
             maxZoom: 20,
-            minZoom: 7,
+            minZoom: 4,
             mapTypeControl: true
         });
 
